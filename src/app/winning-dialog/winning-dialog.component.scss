@@ -1,0 +1,73 @@
+
+.winning-dialog{
+    text-align: center;
+    position:relative;
+    background-color: white;
+    padding:24px 0;
+    min-width:320px;
+    border-radius:10px;
+    .emoji{
+        width:90px;
+        height:90px;
+        line-height: 90px;
+        text-align: center;
+        font-size:90px;
+        margin:24px auto 16px auto;
+    }
+    .rating{
+        margin-bottom:24px;
+        .mat-icon{
+            color: #D89500;
+        }
+    }
+    .title{
+        font-weight: bolder;
+        color:#D89500;
+        font-size:24px;
+        margin-bottom:16px;
+    }
+    .game-resume{
+        border-top:1px solid #DDDDDD;
+        border-bottom:1px solid #DDDDDD;
+        margin-bottom:24px;
+        display: flex;
+        justify-content:space-evenly;
+        padding:8px;
+        .resume-item{
+            display:flex;
+            align-items: center;
+            padding-right:8px;
+            height:34px;
+            margin:0;
+            border-radius:4px;
+            .mat-icon{
+                height:34px;
+                width:34px;
+                line-height: 34px;
+                border-right:1px solid #DDDDDD;
+                margin-right:8px;
+            }
+        }
+    }
+    .win-action{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.play-again{
+    background-color: #01B761;
+    color:white;
+    text-transform: uppercase;
+}
+
+
+
+
+canvas {
+    height: 100%; /* we need these for full-screen effect */
+    width: 100%;
+    position:fixed;
+    top:0;
+    left:0;
+}

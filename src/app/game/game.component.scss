@@ -1,0 +1,188 @@
+
+.game-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+    .game {
+		width:100%;
+		max-width: 760px;
+		.game-header{
+			width:100%;
+			display:flex;
+			align-items: center;
+			margin-bottom:24px;
+			height:48px;
+			.header-item{
+				flex: 0 0 25%;
+				height:48px;
+				line-height: 48px;
+				color:white;
+				line-height: 48px;
+				text-align: center;
+				.game-icon{
+					font-size:36px;
+					height:48px;
+					line-height: 48px;
+				}
+					
+				h4{
+					margin:0;
+					height:48px;
+					line-height: 48px;
+				}
+
+				.mat-icon{
+					color:white;
+				}
+			}
+
+		}
+
+        mat-grid-list{
+            mat-grid-tile {
+                background-color: #F7D760;
+                font-size:0;
+                cursor:pointer;
+                border-radius:10px; 
+                &.show{
+                    transform: rotateY(0);
+                    background: #5136DC;
+                    cursor: default;
+                    animation-name: flipInY;
+                    -webkit-backface-visibility: visible !important;
+                    backface-visibility: visible !important;
+                    animation-duration: .50s;
+                    font-size: 72px;
+                }
+                &.matched{
+                    font-size:72px;
+                    cursor: default;
+                    background: #01B761;
+                    animation-name: rubberBand;
+                    -webkit-backface-visibility: visible !important;
+                    backface-visibility: visible !important;
+                    animation-duration: .50s;
+                }
+                &.no-matched{
+                    animation-name: pulse;
+                    -webkit-backface-visibility: visible !important;
+                    backface-visibility: visible !important;
+                    animation-duration: .75s;
+                    background: #e2043b;
+                    font-size: 72px;
+                }
+            }
+        }
+    }
+}
+
+.no-game{
+	background-size: cover;
+	background-image:url('./../../assets//img/memoji-bg.jpg');
+	min-width:480px;
+	min-height:320px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	h1{
+		font-size:36px;
+		font-weight: bolder;
+		color:#2A2526;
+	}
+}
+.mat-raised-button{
+	background-color:#01B761;
+	color:white;
+	height:40px;
+	font-size:18px;
+	.mat-icon{
+		margin-right:8px;
+	}
+}
+
+.mat-mini-fab{
+	background-color:#01B761;
+}
+
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	40% {
+		transform: perspective(400px);
+		
+	}
+
+	60% {
+		transform: perspective(400px);
+		opacity: 1;
+	}
+	to {
+		transform: perspective(400px);
+	}
+}
+
+@keyframes rubberBand {
+	0% {
+		transform: scale(1);
+	}
+
+	33%{
+		transform: scale(.65);
+	}
+	  
+	  66% {
+		transform: scale(1.3);
+	  }
+	  
+	  100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	  }
+	  
+	  20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	  }
+	
+	  30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	  }
+	
+	  40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	  }
+}
+@media screen and (max-width: 600px) {
+	.game-wrapper{
+		.game {
+			mat-grid-list{
+				mat-grid-tile {
+					&.show,
+					&.matched,
+					&.no-matched{
+						font-size:64px;
+					}
+				}
+			}
+		}
+	}
+    .no-game{
+		min-width:300px;
+		min-height:200px;
+		margin:0 16px;
+		h1{
+			font-size:32px;
+		}
+	}
+	
+}

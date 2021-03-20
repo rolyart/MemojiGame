@@ -1,0 +1,27 @@
+<mat-icon class="close-dialog" mat-dialog-close>close</mat-icon>
+<mat-card class="winning-dialog"  >
+        <div class="emoji">🏆</div>
+        <h2 class="title">CONGRATULATIONS!</h2>
+        <div class="rating">
+            <mat-icon *ngFor="let star of starsRating">star</mat-icon>
+        </div>
+        <div class="game-resume">
+            <h2 class="resume-item">
+                Moves: {{data.moves}}
+            </h2>
+            <h2 class="resume-item">
+                Time: {{displayTimer()}}
+            </h2>
+        </div>
+        
+        <div class="win-action">
+            <button color="primary" mat-raised-button (click)="openGamesDialog()">
+                Chose Game
+            </button>
+            <button mat-raised-button class="play-again"  [mat-dialog-close]="'play-again'" > 
+                Play Again
+            </button>
+        </div>
+</mat-card>
+
+

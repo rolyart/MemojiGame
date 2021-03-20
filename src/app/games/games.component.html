@@ -1,0 +1,30 @@
+<mat-icon class="close-dialog" mat-dialog-close>close</mat-icon>
+
+<div class="games-container">
+	<mat-grid-list  [cols]="cols" rowHeight="1:1" gutterSize="16" >
+		<mat-grid-tile *ngFor="let game of games" [mat-dialog-close]="game" 
+		matRipple
+		matRippleCentered="true" >
+			<div class="game">
+				<div class="game-icon">
+					{{game.icon}}
+				</div>
+				<h2 class="game-title">{{game.title}}</h2>
+			</div>
+		</mat-grid-tile>
+	</mat-grid-list>
+
+
+        <!--div class="game-item" 
+            matRipple
+            matRippleCentered="true"
+            [mat-dialog-close]="game"
+            *ngFor="let game of games">
+            <div class="game-icon">
+                    {{game.icon}}
+            </div>
+            <h3 class="game-title">{{game.title}}</h3>
+        </div-->
+</div>
+
+

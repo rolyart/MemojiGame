@@ -1,1 +1,223 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
+
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100;
+    overflow: auto;
+}
+
+.app-content{
+    flex: 1;
+    padding:16px 16px 64px 16px;
+}
+
+.is-mobile .app-header{
+    position: fixed;
+    z-index: 2;
+}
+
+.is-mobile .app-content {
+    flex: 1 0 auto;
+}
+
+.app-footer{
+	position:fixed;
+	bottom:0;
+	justify-content: center;
+	background-color:transparent;
+	.app-button{
+        background-color: transparent;	
+        outline: none;
+        border:none;
+        width:56px;
+        height:56px;
+        border-radius:50%;
+        padding:0;
+        cursor:pointer;
+		.mat-icon{
+            font-size:36px;
+            width:36px;
+            height: 36px;
+            line-height: 36px;  
+            color:white;
+        }
+    }
+}
+
+.full-screen-modal .mat-dialog-container {
+    max-width: 100% !important;
+    border-radius: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    .close-dialog{
+        position:fixed;
+        top:16px;
+        right:16px;
+        color:white;
+        cursor:pointer;
+        color:rgba(white, .5);
+        &:hover{
+            color:white;
+        }
+    }
+}
+
+.winning-dialog .mat-dialog-container{
+    max-width: 100% !important;
+    border-radius: 0;
+    padding:16px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .close-dialog{
+        position:fixed;
+        top:16px;
+        right:16px;
+        color:white;
+        cursor:pointer;
+        color:rgba(white, .5);
+        &:hover{
+            color:white;
+        }
+    }
+
+}
+
+.tooltip{
+	font-size: 16px !important;
+}
+
+/*Utilities
+============================== */
+.flex-spacer {
+    flex: 1 1 auto;
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+
+
+/* Background animation
+===============================================*/
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin:0;
+    padding:0;
+    bottom:0;
+    list-style: none;
+    li{
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+        text-align: center;
+        &:nth-child(1){
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        &:nth-child(3){
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+        &:nth-child(4){
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+        &:nth-child(5){
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        &:nth-child(6){
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        &:nth-child(7){
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+        &:nth-child(8){
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+        &:nth-child(9){
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        &:nth-child(10){
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+        
+        
+    }
+}
+  
+  @keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+  }
